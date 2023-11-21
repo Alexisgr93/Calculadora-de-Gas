@@ -79,6 +79,7 @@ const mapaPosiciones = {
 };
 
 
+
 function obtenerSiguienteValor(lista, valor) {
     const idx = lista.findIndex(item => item >= valor);
     if (idx !== -1) {
@@ -96,8 +97,17 @@ function obtenerValorAjustado(valor, lista) {
     let longitudMetroInput = document.getElementById("LongMetro");
     let cantidadMedidoresInput = document.getElementById("CantMedidores");
 
+    
     let longitudMetro = parseInt(longitudMetroInput.value);
     let cantidadMedidores = parseInt(cantidadMedidoresInput.value);
+
+
+    // Verificar si los números son negativos o iguales a cero
+    if (longitudMetro <= 0 || cantidadMedidores <= 0 || isNaN(longitudMetro) || isNaN(cantidadMedidores)) {
+       alert("Por favor, ingrese números mayor ó igual a 1.");
+        return; // Detener la ejecución si los números no son válidos
+    }
+
 
     longitudMetro = obtenerValorAjustado(longitudMetro, valoresLongitud);
     cantidadMedidores = obtenerValorAjustado(cantidadMedidores, valoresMedidores);
