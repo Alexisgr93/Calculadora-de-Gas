@@ -105,6 +105,7 @@ function obtenerValorAjustado(valor, lista) {
     // Verificar si los números son negativos o iguales a cero
     if (longitudMetro <= 0 || cantidadMedidores <= 0 || isNaN(longitudMetro) || isNaN(cantidadMedidores)) {
        alert("Por favor, ingrese números mayor ó igual a 1.");
+       document.getElementById("Resultado").innerText = `Resultado: `; //vuelve el resultado a sin valor despues del alert
         return; // Detener la ejecución si los números no son válidos
     }
 
