@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
   <!--La manera de incluir boostrap en github page de manera online es la opcion 2, la opcion 1 es cuando no hay internet en github page no funciona!!-->
 	<!--Opcion 1-->
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -15,36 +16,55 @@
 
 </head>
 <body>
-    <section>
-        <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Ingrese la Cantidad de Medidores</label>
-              <input type="number" class="form-control" id="CantMedidores" placeholder="Valor en Unidad">
+  <header></header>
+    <main>
+      <div class="scroll">
+      <section>
+          <form>
+            <div class="card text-center mb-3" style="width: 90%; margin-left: 5%; margin-top: 2%;">
+              <div class="card-header">
+                Calculadora de Prolongacion
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Ingrese la Cantidad de Medidores</h5>
+                <input type="number" class="form-control" id="CantMedidores" placeholder="Valor en Unidad">
+                <br>
+                <h5 class="card-title">Ingrese la Longitud de Prolongacion</h5>
+                <input type="number" class="form-control" id="LongMetro" placeholder="Valor en Metros">
+                <br>
+                <input type="button" class="btn btn-primary" onclick="Tabla2()" value="Calcular"></input>
+              </div>
+              <div class="card-footer text-body-secondary" id="Resultado">
+                Resultado:
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Ingrese la Longitud de Prolongacion</label>
-              <input type="number" class="form-control" id="LongMetro" placeholder="Valor en Metros">
+          </form>
+          <form>
+            <div class="card text-center mb-3" style="width: 90%; margin-left: 5%; margin-top: 2%;">
+              <div class="card-header">
+                Calculadora de Caudal
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Ingrese el Diametro de Cañeria</h5>
+                <input type="number" class="form-control" id="Diametro" placeholder="Valor en mm">
+                <br>
+                <h5 class="card-title">Ingrese la Longitud de Cañeria</h5>
+                <input type="number" class="form-control" id="LongCan" placeholder="Valor en Metros">
+                <br>
+                <input type="button" class="btn btn-primary" onclick="Tabla3()" value="Calcular"></input>
+              </div>
+              <div class="card-footer text-body-secondary" id="ResultadoTabla3">
+                Resultado:
+              </div>
             </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <input type="button" class="btn btn-primary" onclick="Tabla2()" value="Calcular"></input>
-            <p id="Resultado">Resultado:</p>
-        </form>
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Ingrese el Diametro de Cañeria</label>
-            <input type="number" class="form-control" id="Diametro" placeholder="Valor en mm">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Ingrese la Longitud de Cañeria</label>
-            <input type="number" class="form-control" id="LongCan" placeholder="Valor en Metros">
-          </div>
-          <input type="button" class="btn btn-primary" onclick="Tabla3()" value="Calcular"></input>
-          <p id="ResultadoTabla3">Resultado:</p>
-      </form>  
-    </section>
+          </form>
+           
+      </section>
+      </div>
+    </main>
+    <footer>
+
+    </footer>  
     <script src="./js/index.js"></script>
     <script src="./js/tabla2.js"></script>
     <script src="./js/tabla3.js"></script>
