@@ -120,7 +120,7 @@ function obtenerValorAjustado(valor, lista) {
 
     if (fila !== -1 && columna !== -1) {
         const valor = matriz[fila][columna];
-        document.getElementById("Resultado").innerText = `Resultado: ${valor}`;
+        document.getElementById("Resultado").innerText = `Resultado: ${valor/1000} m³/h`;
     } else {
         longitudMetro = valoresLongitud[valoresLongitud.length - 1];
         cantidadMedidores = valoresMedidores[valoresMedidores.length - 1];
@@ -131,6 +131,6 @@ function obtenerValorAjustado(valor, lista) {
         columna = valoresMedidores.indexOf(cantidadMedidores); // Índice de la cantidad de medidores ajustada en la matriz
 
         const valor = matriz[fila][columna];
-        document.getElementById("Resultado").innerText = `Resultado ajustado: ${valor}`;
+        document.getElementById("Resultado").innerText = `Resultado ajustado: ${valor/1000} m³/h`;
     }
 }

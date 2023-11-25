@@ -173,7 +173,7 @@ function Tabla3() {
     
         if (fila !== -1 && columna !== -1) {
             const valor = matriz[fila][columna];
-            document.getElementById("ResultadoTabla3").innerText = `Resultado: ${valor}`;
+            document.getElementById("ResultadoTabla3").innerText = `Resultado: ${valor} ⌀`;
         } else {
             Diametro = valoresDiametro[valoresDiametro.length - 1];
             LongCan = valoresLongCan[valoresLongCan.length - 1];
@@ -184,6 +184,6 @@ function Tabla3() {
             columna = valoresLongCan.indexOf(LongCan); // Índice de la cantidad de medidores ajustada en la matriz
     
             const valor = matriz[fila][columna];
-            document.getElementById("CalcularTabla3").innerText = `Resultado ajustado: ${valor}`;
+            document.getElementById("CalcularTabla3").innerText = `Resultado ajustado: ${valor} ⌀`;
         }
     }
