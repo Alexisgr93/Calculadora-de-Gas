@@ -187,3 +187,9 @@ function Tabla3() {
             document.getElementById("CalcularTabla3").innerText = `Resultado ajustado: ${valor} ⌀`;
         }
     }
+
+    function ReiniciarAppT3() {
+        document.getElementById("LongCan").value = ""; // Reinicia el valor de LongMetro
+        document.getElementById("Diametro").value = ""; // Reinicia el valor de CantMedidores
+        document.getElementById("Resultado").innerText = `Resultado:`; // Reinicia el resultado
+    }
