@@ -21,11 +21,11 @@
       <div class="scroll">
       <section>
           <form>
-            <div class="card text-center mb-3" style="width: 90%; margin-left: 5%; margin-top: 2%;">
+            <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
               <div class="card-header">
-                Calculadora de Prolongacion
+                <h3>Calculadora de Prolongacion</h3>
               </div>
-              <div class="card-body">
+              <div class="card-body text-bg-light p-3">
                 <h5 class="card-title">Ingrese la Cantidad de Medidores</h5>
                 <input type="number" class="form-control" id="CantMedidores" placeholder="Valor en Unidad">
                 <br>
@@ -33,23 +33,23 @@
                 <input type="number" class="form-control" id="LongMetro" placeholder="Valor en Metros">
                 <br>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                  <button type="button" class="btn btn-danger" onclick="ReiniciarAppT2()">Reiniciar aplicacion</button>
+                  <button type="button" class="btn btn-danger" onclick="ReiniciarAppT2()">Reiniciar Valores</button>
                   <button type="button" class="btn btn-success" onclick="Tabla2()">Calcular Resultado</button>
-                  <button type="button" class="btn btn-primary">Mostrar Resultados</button>
+                  <button type="button" class="btn btn-primary">Mostrar Info</button>
                 </div>
                 <!--<input type="button" class="btn btn-primary" onclick="Tabla2()" value="Calcular"></input> -->
               </div>
-              <div class="card-footer text-body-secondary" id="Resultado">
+              <div class="card-footer text-bg-secondary" id="Resultado">
                 Resultado:
               </div>
             </div>
           </form>
           <form>
-            <div class="card text-center mb-3" style="width: 90%; margin-left: 5%; margin-top: 2%;">
+            <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
               <div class="card-header">
-                Calculadora de Caudal
+                <h3>Calculadora de Caudal</h3>
               </div>
-              <div class="card-body">
+              <div class="card-body text-bg-light p-3">
                 <h5 class="card-title">Ingrese el Diametro de Cañeria</h5>
                 <input type="number" class="form-control" id="Diametro" placeholder="Valor en mm">
                 <br>
@@ -57,13 +57,13 @@
                 <input type="number" class="form-control" id="LongCan" placeholder="Valor en Metros">
                 <br>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                  <button type="button" class="btn btn-danger" onclick="ReiniciarAppT3()">Reiniciar aplicacion</button>
+                  <button type="button" class="btn btn-danger" onclick="ReiniciarAppT3()">Reiniciar Valores</button>
                   <button type="button" class="btn btn-success" onclick="Tabla3()">Calcular Resultado</button>
-                  <button type="button" class="btn btn-primary">Mostrar Resultados</button>
+                  <button type="button" class="btn btn-primary">Mostrar Info</button>
                 </div>
                 <!-- <input type="button" class="btn btn-primary" onclick="Tabla3()" value="Calcular"></input> -->
               </div>
-              <div class="card-footer text-body-secondary" id="ResultadoTabla3">
+              <div class="card-footer text-bg-secondary" id="ResultadoTabla3">
                 Resultado:
               </div>
             </div>
