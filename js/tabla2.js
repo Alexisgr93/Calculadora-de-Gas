@@ -80,6 +80,8 @@ const mapaPosiciones = {
 
 
 
+
+
 function obtenerSiguienteValor(lista, valor) {
     const idx = lista.findIndex(item => item >= valor);
     if (idx !== -1) {
@@ -133,4 +135,16 @@ function obtenerValorAjustado(valor, lista) {
         const valor = matriz[fila][columna];
         document.getElementById("Resultado").innerText = `Resultado ajustado: ${valor/1000} m³/h`;
     }
+
+
+    
 }
+function ReiniciarAppT2() {
+    document.getElementById("LongMetro").value = ""; // Reinicia el valor de LongMetro
+    document.getElementById("CantMedidores").value = ""; // Reinicia el valor de CantMedidores
+    document.getElementById("Resultado").innerText = `Resultado:`; // Reinicia el resultado
+}
+
+//function ReiniciarAppT2() {
+  //  location.reload(); // Recarga la página actual
+  //}
