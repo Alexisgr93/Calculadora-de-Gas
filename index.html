@@ -51,7 +51,7 @@
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                   <button type="button" class="btn btn-danger" onclick="ReiniciarAppT2()">Reiniciar Valores</button>
                   <button type="button" class="btn btn-success" onclick="Tabla2()">Calcular Resultado</button>
-                  <button type="button" class="btn btn-primary">Mostrar Info</button>
+                  <button type="button" class="btn btn-primary" onclick="mostrarTabla()">Mostrar Info</button>
                 </div>
                 <!--<input type="button" class="btn btn-primary" onclick="Tabla2()" value="Calcular"></input> -->
               </div>
@@ -86,6 +86,33 @@
           </form>
            
       </section>
+
+
+      <div class="card mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="tablaResultado">
+        <div class="card-header">
+            Datos y Resultados
+            <button type="button" class="btn-close float-end" onclick="ocultarTabla()" aria-label="Close"></button>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Cantidad de Medidores</th>
+                        <th scope="col">Longitud de Prolongación</th>
+                        <th scope="col">Resultado Tabla 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="filaDatos">
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
       </div>
     </main>
     <footer class="d-flex justify-content-center align-items-center">
@@ -101,7 +128,12 @@
           </svg>
         </button>
       
-    </footer>  
+    </footer> 
+    <script>
+
+
+      
+  </script> 
     <script src="./js/index.js"></script>
     <script src="./js/tabla2.js"></script>
     <script src="./js/tabla3.js"></script>

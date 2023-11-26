@@ -148,3 +148,39 @@ function ReiniciarAppT2() {
 //function ReiniciarAppT2() {
   //  location.reload(); // Recarga la página actual
   //}
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const tablaResultado = document.getElementById('tablaResultado');
+    const botonMostrarInfo = document.querySelector('.btn-group button.btn-primary');
+
+    function mostrarTabla() {
+        // Obtener los valores ingresados
+        const cantMedidores = document.getElementById('CantMedidores').value;
+        const longMetro = document.getElementById('LongMetro').value;
+        // Realizar el cálculo de la Tabla 2 (simulado)
+        const resultadoTabla2 = document.getElementById("Resultado").innerText; // Cambia esta lógica por tu cálculo real
+
+        // Mostrar los valores en la tabla oculta
+        document.getElementById('filaDatos').innerHTML = `
+            <td>${cantMedidores}</td>
+            <td>${longMetro}</td>
+            <td>${resultadoTabla2}</td>
+        `;
+
+        // Mostrar la tabla oculta
+        tablaResultado.style.display = 'block';
+    }
+
+    function ocultarTabla() {
+        // Ocultar la tabla al hacer clic en el botón "Close"
+        tablaResultado.style.display = 'none';
+    }
+
+    botonMostrarInfo.addEventListener('click', mostrarTabla);
+
+    document.addEventListener('click', function(event) {
+        if (event.target !== tablaResultado && event.target !== botonMostrarInfo) {
+            ocultarTabla();
+        }
+    });
+});
