@@ -14,7 +14,7 @@ main{
 
 footer{
     height: 7%;
-    background-color: black;
+    background-color: rgb(112, 25, 25);
 }
 
 .scroll {
@@ -23,4 +23,8 @@ footer{
     height: 100%;
     overflow: scroll;
 	overflow-x: hidden;
+}
+
+.text-linkedin{
+    background-color: rgb(14, 118, 168);
 }
