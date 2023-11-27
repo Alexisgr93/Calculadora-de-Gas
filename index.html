@@ -84,6 +84,26 @@
               </div>
             </div>
           </form>
+          <form>
+            <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
+              <div class="card-header">
+                <h3>Calculadora de Kcal a m³/h</h3>
+              </div>
+              <div class="card-body text-bg-light p-3">
+                <h5 class="card-title">Ingrese el Valor de Kcal</h5>
+                <input type="number" class="form-control" id="Kcal" placeholder="Valor en Kcal">
+                <br>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                  <button type="button" class="btn btn-danger" onclick="ReiniciarAppKcal()">Reiniciar Valores</button>
+                  <button type="button" class="btn btn-success" onclick="PasarKcal()">Calcular Resultado</button>
+                </div>
+                <!-- <input type="button" class="btn btn-primary" onclick="Tabla3()" value="Calcular"></input> -->
+              </div>
+              <div class="card-footer text-bg-secondary" id="ResultadoKcal">
+                Resultado:
+              </div>
+            </div>
+          </form>
            
       </section>
 
