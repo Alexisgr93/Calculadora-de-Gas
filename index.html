@@ -110,32 +110,33 @@
                 <div class="card-header">
                     <h3>Seleccionar insumo e ingresar valores</h3>
                 </div>
-
-              
                 <div class="card-body text-bg-light p-3">
-
-
-                  <div class="row g-2 align-items-center" > 
-                    <div class="col-auto">
-                    <select class="form-select form-select-sm mr-2" aria-label="Small select example">
-                        <option selected>Seleccione insumo</option>
-                        <option value="1">Codo</option>
-                        <option value="2">Tee</option>
-                        <option value="3">Llave de paso</option>
-                    </select>
+                    <div id="formularioInicial">
+                        <!-- Campos iniciales -->
+                        <div class="row g-2 align-items-center">
+                            <div class="col-auto">
+                                <select class="form-select form-select-sm mr-2" aria-label="Small select example">
+                                    <option selected>Seleccione insumo</option>
+                                    <option value="1">Codo</option>
+                                    <option value="2">Tee</option>
+                                    <option value="3">Llave de paso</option>
+                                </select>
+                            </div>
+                            <div class="col-auto">
+                                <input type="number" class="form-control form-control-sm mr-2" id="codos" placeholder="Cantidad de codos (un)">
+                            </div>
+                            <div class="col-auto">
+                                <input type="number" class="form-control form-control-sm mr-2" id="IncPas" placeholder="Inclinación de pasaje">
+                            </div>
+                            <div class="col-auto">
+                                <input type="number" class="form-control form-control-sm mr-2" id="DiamCa" placeholder="Diámetro cañería (Metros)">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                      <input type="number" class="form-control form-control-sm mr-2" id="codos" placeholder="Cantidad de codos (un)">
-                    </div>
-                    <div class="col-auto">
-                      <input type="number" class="form-control form-control-sm mr-2" id="IncPas" placeholder="Inclinacion de pasaje">
-                    </div>
-                    <div class="col-auto">
-                      <input type="number" class="form-control form-control-sm mr-2" id="DiamCa" placeholder="Diámetro cañería (Metros)">
-                    </div>
-                  </div>
+                    <div id="camposExtras"></div>
                     <br>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn btn-secondary mr-2" onclick="agregarCampos()">Agregar más</button>
                         <button type="button" class="btn btn-danger mr-2" onclick="ReiniciarEcuacion()">Reiniciar Valores</button>
                         <button type="button" class="btn btn-success" onclick="CalcularEcuacion()">Calcular Resultado</button>
                     </div>
@@ -196,6 +197,47 @@
 
       
   </script> 
+  <script>
+    let contador = 1;
+
+    function agregarCampos() {
+        contador++;
+        const camposExtras = document.getElementById('camposExtras');
+
+        const nuevaFila = document.createElement('div');
+        nuevaFila.classList.add('row', 'g-2', 'align-items-center');
+
+        nuevaFila.innerHTML = `
+            <div class="col-auto">
+                <select class="form-select form-select-sm mr-2" aria-label="Small select example">
+                    <option selected>Seleccione insumo</option>
+                    <option value="1">Codo</option>
+                    <option value="2">Tee</option>
+                    <option value="3">Llave de paso</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control form-control-sm mr-2" placeholder="Cantidad de codos (un)">
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control form-control-sm mr-2" placeholder="Inclinación de pasaje">
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control form-control-sm mr-2" placeholder="Diámetro cañería (Metros)">
+            </div>
+        `;
+
+        camposExtras.appendChild(nuevaFila);
+    }
+
+    function ReiniciarEcuacion() {
+        // Lógica para reiniciar los valores
+    }
+
+    function CalcularEcuacion() {
+        // Lógica para calcular el resultado
+    }
+</script>
     <script src="./js/index.js"></script>
     <script src="./js/tabla2.js"></script>
     <script src="./js/tabla3.js"></script>
