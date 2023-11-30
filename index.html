@@ -126,7 +126,7 @@
                                 <input type="number" class="form-control form-control-sm mr-2" id="codos" placeholder="Cantidad de codos (un)">
                             </div>
                             <div class="col-auto">
-                                <input type="number" class="form-control form-control-sm mr-2" id="IncPas" placeholder="Inclinación de pasaje">
+                                <input type="number" class="form-control form-control-sm mr-2" id="IncPas" placeholder="Caida de presion">
                             </div>
                             <div class="col-auto">
                                 <input type="number" class="form-control form-control-sm mr-2" id="DiamCa" placeholder="Diámetro cañería (Metros)">
@@ -201,8 +201,13 @@
     let contador = 1;
 
     function agregarCampos() {
+      
         contador++;
         const camposExtras = document.getElementById('camposExtras');
+
+        // Agregar línea divisoria después de agregar la nueva fila
+        const lineaDivisoria = document.createElement('hr');
+        camposExtras.appendChild(lineaDivisoria);
 
         const nuevaFila = document.createElement('div');
         nuevaFila.classList.add('row', 'g-2', 'align-items-center');
@@ -228,6 +233,8 @@
         `;
 
         camposExtras.appendChild(nuevaFila);
+
+        
     }
 
     function ReiniciarEcuacion() {
