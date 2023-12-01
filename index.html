@@ -75,7 +75,7 @@
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                   <button type="button" class="btn btn-danger" onclick="ReiniciarAppT3()">Reiniciar Valores</button>
                   <button type="button" class="btn btn-success" onclick="Tabla3()">Calcular Resultado</button>
-                  <button type="button" class="btn btn-primary">Mostrar Info</button>
+                  <button type="button" class="btn btn-primary" onclick="mostrarTablaCaudal()">Mostrar Info</button>
                 </div>
                 <!-- <input type="button" class="btn btn-primary" onclick="Tabla3()" value="Calcular"></input> -->
               </div>
@@ -151,13 +151,13 @@
       </section>
 
 
-      <div class="card mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="tablaResultado">
-        <div class="card-header">
-            Datos y Resultados
+      <div class="card text-bg-primary mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="tablaResultado">
+        <div class="card-header text-bg-primary">
+            Datos y Resultados equivalentes para Tabla
             <button type="button" class="btn-close float-end" onclick="ocultarTabla()" aria-label="Close"></button>
         </div>
-        <div class="card-body">
-            <table class="table">
+        <div class="card-body text-bg-primary">
+            <table class="table blue-table">
                 <thead>
                     <tr>
                         <th scope="col">Cantidad de Medidores</th>
@@ -165,8 +165,8 @@
                         <th scope="col">Resultado Tabla 2</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr id="filaDatos">
+                <tbody class="table blue-table">
+                    <tr id="filaDatos" style="color: white;">
                         <td>--</td>
                         <td>--</td>
                         <td>--</td>
@@ -175,6 +175,33 @@
             </table>
         </div>
     </div>
+
+
+    <!--Mostrar/ocultar Tabla 3-->
+    <div class="card text-bg-primary mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="mostrarTabla3">
+      <div class="card-header text-bg-primary">
+          Datos y Resultados equivalentes para Tabla 3
+          <button type="button" class="btn-close float-end" onclick="ocultarTabla3()" aria-label="Close"></button>
+      </div>
+      <div class="card-body text-bg-primary">
+          <table class="table blue-table">
+              <thead>
+                  <tr>
+                      <th scope="col">Cantidad de Medidores</th>
+                      <th scope="col">Longitud de Prolongación</th>
+                      <th scope="col">Resultado Tabla 3</th>
+                  </tr>
+              </thead>
+              <tbody class="table blue-table">
+                  <tr id="filaDatos3" style="color: white;">
+                      <td>--</td>
+                      <td>--</td>
+                      <td>--</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
 
       </div>
     </main>

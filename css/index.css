@@ -28,3 +28,38 @@ footer{
 .text-linkedin{
     background-color: rgb(14, 118, 168);
 }
+
+
+
+
+
+    /* Estilos personalizados para la tabla azul */
+    .blue-table {
+        background-color: #007bff;
+        color: white;
+        vertical-align: middle;
+    }
+
+    .blue-table th,
+    .blue-table td,
+    .blue-table thead th {
+        border-color: #dee2e6;
+        vertical-align: middle;
+    }
+
+    .blue-table th td{
+        background-color: rgb(13, 110, 253);
+        color: white;
+    }
+
+    .blue-table thead th {
+        background-color: rgb(13, 110, 253);
+        color: white;
+        border-color: rgb(13, 110, 253);
+    }
+
+    .blue-table tbody td {
+        background-color: rgb(13, 110, 253);
+        color: white;
+        border-color: rgb(13, 110, 253);
+    }

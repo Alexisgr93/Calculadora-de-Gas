@@ -191,5 +191,47 @@ function Tabla3() {
     function ReiniciarAppT3() {
         document.getElementById("LongCan").value = ""; // Reinicia el valor de LongMetro
         document.getElementById("Diametro").value = ""; // Reinicia el valor de CantMedidores
-        document.getElementById("Resultado").innerText = `Resultado:`; // Reinicia el resultado
+        document.getElementById("ResultadoTabla3").innerText = `Resultado:`; // Reinicia el resultado
     }
+
+
+
+
+
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    const tablaCaudalResultado = document.getElementById('mostrarTabla3');
+    const botonMostrarTabla3 = document.querySelector('.btn-tabla3');
+    
+        function mostrarTabla3() {
+            // Obtener los valores ingresados
+            const diametro = document.getElementById('Diametro').value;
+            const longCan = document.getElementById('LongCan').value;
+            // Realizar el cálculo de la Tabla 2 (simulado)
+            const resultadoTablaCaudal = document.getElementById("ResultadoTabla3").innerText; // Cambia esta lógica por tu cálculo real
+    
+            // Mostrar los valores en la tabla oculta
+            document.getElementById('filaDatos3').innerHTML = `
+                <td>${diametro}</td>
+                <td>${longCan}</td>
+                <td>${resultadoTablaCaudal}</td>
+            `;
+    
+            // Mostrar la tabla oculta
+            tablaCaudalResultado.style.display = 'block';
+        }
+    
+        function ocultarTabla3() {
+            // Ocultar la tabla al hacer clic en el botón "Close"
+            tablaCaudalResultado.style.display = 'none';
+        }
+    
+        botonMostrarTabla3.addEventListener('click', mostrarTabla3);
+
+    document.addEventListener('click', function(event) {
+        if (event.target !== tablaCaudalResultado && event.target !== botonMostrarTabla3) {
+            ocultarTabla3();
+        }
+        });
+    });
