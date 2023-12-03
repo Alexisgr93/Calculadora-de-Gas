@@ -200,13 +200,16 @@ function Tabla3() {
 
 
     
-    document.addEventListener('DOMContentLoaded', function() {
-    const tablaCaudalResultado = document.getElementById('mostrarTabla3');
-    const botonMostrarTabla3 = document.querySelector('.btn-tabla3');
-    
-        function mostrarTabla3() {
-            // Obtener los valores ingresados
-            const diametro = document.getElementById('Diametro').value;
+
+
+
+        // Declara x fuera de las funciones para que esté accesible para ambas
+const x = document.getElementById("mostrarTabla3");
+//const z = document.getElementById(mostrarTablaCaudal());
+const botonMostrarTabla3 = document.querySelector('.btn.btn-primary');
+        function mostrarTablaCaudal() {
+            
+                const diametro = document.getElementById('Diametro').value;
             const longCan = document.getElementById('LongCan').value;
             // Realizar el cálculo de la Tabla 2 (simulado)
             const resultadoTablaCaudal = document.getElementById("ResultadoTabla3").innerText; // Cambia esta lógica por tu cálculo real
@@ -217,21 +220,19 @@ function Tabla3() {
                 <td>${longCan}</td>
                 <td>${resultadoTablaCaudal}</td>
             `;
-    
-            // Mostrar la tabla oculta
-            tablaCaudalResultado.style.display = 'block';
-        }
-    
+                x.style.display = "block";
+            }
+        
         function ocultarTabla3() {
             // Ocultar la tabla al hacer clic en el botón "Close"
-            tablaCaudalResultado.style.display = 'none';
+            x.style.display = 'none';
+            
         }
-    
-        botonMostrarTabla3.addEventListener('click', mostrarTabla3);
-
-    document.addEventListener('click', function(event) {
-        if (event.target !== tablaCaudalResultado && event.target !== botonMostrarTabla3) {
-            ocultarTabla3();
-        }
+        
+        
+        document.addEventListener('mouseup', function(e) {
+            if (x.style.display === 'block' && !x.contains(e.target) && e.target !== botonMostrarTabla3) {
+                ocultarTabla3();
+            }
         });
-    });
+        
