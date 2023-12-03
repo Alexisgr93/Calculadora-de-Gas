@@ -1,7 +1,22 @@
 function CalcularEcuacion() {
     let filas = document.querySelectorAll('#camposExtras .row');
     let sumaResultados = 0;
-
+    //seleccionar si o si
+    const selects = document.querySelectorAll('.form-select');
+        //parte de seleccion de tee codo o llave
+        let validSelection = true;
+        selects.forEach(select => {
+            if (select.value === 'Seleccione insumo') {
+                validSelection = false;
+                return;
+            }
+        });
+        //retorna y borra resultado
+        if (!validSelection) {
+            alert('Por favor seleccione un insumo para todos los campos.');
+            document.getElementById("ResultadoEcua").innerText = `Resultado:`;
+            return;
+        }
     
 
     filas.forEach((fila) => {
@@ -21,5 +36,5 @@ function CalcularEcuacion() {
         let DiamCa1 = document.getElementById("DiamCa").value;
         let Resultado1 = codos1 * IncPas1 * DiamCa1;
         total = Resultado1 + sumaResultados;
-    document.getElementById("ResultadoEcua").innerText = `Suma total: ${Number(total.toFixed(2))} m³/h`;
+    document.getElementById("ResultadoEcua").innerText = `Resultado: ${Number(total.toFixed(2))} m³/h`;
 }
