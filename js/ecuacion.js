@@ -41,6 +41,12 @@ function CalcularEcuacion() {
 
 
 
+
+
+
+
+
+
 var w = document.getElementById("mostrarTablaEcua");
 const botonMostrarTablaEcua = document.querySelector('.btn.btn-primary');
   function mostrarTablaEcuacion() {
@@ -52,6 +58,27 @@ const botonMostrarTablaEcua = document.querySelector('.btn.btn-primary');
     const diametroCaneria = document.getElementById('DiamCa').value;
     const resultadoEcua = document.getElementById("ResultadoEcua").innerText;
 
+    
+    const filas = document.querySelectorAll('#camposExtras .row');
+    const datosInsumos = [];
+    filas.forEach((fila, index) => {
+        const insumo = fila.querySelector('select').value;
+        const cantidadInsumo = fila.querySelector('input[placeholder="Cantidad de codos (un)"]').value;
+        const caidaPresion = fila.querySelector('input[placeholder="Inclinación de pasaje"]').value;
+        const diametroCaneria = fila.querySelector('input[placeholder="Diámetro cañería (Metros)"]').value;
+
+        // Almacena los datos en un objeto para luego mostrarlos en la tabla
+        datosInsumos.push({
+            insumo,
+            cantidadInsumo,
+            caidaPresion,
+            diametroCaneria
+            
+        });
+        
+    });
+    
+
     // Mostrar los valores en la tabla oculta
     document.getElementById('filaDatosEcua').innerHTML = `
       <td>${insumo}</td>
@@ -60,6 +87,17 @@ const botonMostrarTablaEcua = document.querySelector('.btn.btn-primary');
       <td>${diametroCaneria}</td>
       <td>${resultadoEcua}</td>
     `;
+
+    datosInsumos.forEach(insumo => {
+        const nuevaFila = document.createElement('tr');
+        nuevaFila.innerHTML = `
+            <td>${insumo.insumo}</td>
+            <td>${insumo.cantidadInsumo}</td>
+            <td>${insumo.caidaPresion}</td>
+            <td>${insumo.diametroCaneria}</td>
+        `;
+        filaDatosEcua.appendChild(nuevaFila);
+    });
 
     w.style.display = "block";
   }

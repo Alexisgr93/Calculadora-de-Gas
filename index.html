@@ -276,9 +276,9 @@
             <div class="col-auto">
                 <select class="form-select form-select-sm mr-2" aria-label="Small select example">
                     <option selected>Seleccione insumo</option>
-                    <option value="1">Codo</option>
-                    <option value="2">Tee</option>
-                    <option value="3">Llave de paso</option>
+                    <option value="Codo">Codo</option>
+                    <option value="Tee">Tee</option>
+                    <option value="Llave de paso">Llave de paso</option>
                 </select>
             </div>
             <div class="col-auto">
@@ -291,6 +291,11 @@
                 <input type="number" class="form-control form-control-sm mr-2" placeholder="Diámetro cañería (Metros)">
             </div>
         `;
+
+        // Agregar manejo de evento 'change' para actualizar la tabla al cambiar valores
+        nuevaFila.querySelectorAll('input, select').forEach(element => {
+        element.addEventListener('change', mostrarTablaEcuacion);
+    });
 
         camposExtras.appendChild(nuevaFila);
 
