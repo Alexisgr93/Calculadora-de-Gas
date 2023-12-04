@@ -60,6 +60,7 @@ const botonMostrarTablaEcua = document.querySelector('.btn.btn-primary');
 
     
     const filas = document.querySelectorAll('#camposExtras .row');
+    
     const datosInsumos = [];
     filas.forEach((fila, index) => {
         const insumo = fila.querySelector('select').value;
@@ -78,25 +79,31 @@ const botonMostrarTablaEcua = document.querySelector('.btn.btn-primary');
         
     });
     
-
+    const tablaDatosEcua = document.querySelector('#filaDatosEcua'); // Selecciona el tbody de la tabla
     // Mostrar los valores en la tabla oculta
-    document.getElementById('filaDatosEcua').innerHTML = `
+    tablaDatosEcua.innerHTML = `
       <td>${insumo}</td>
       <td>${cantidadInsumo}</td>
       <td>${caidaPresion}</td>
       <td>${diametroCaneria}</td>
       <td>${resultadoEcua}</td>
+      
     `;
+    
+
+
 
     datosInsumos.forEach(insumo => {
         const nuevaFila = document.createElement('tr');
         nuevaFila.innerHTML = `
+        <tr>
             <td>${insumo.insumo}</td>
             <td>${insumo.cantidadInsumo}</td>
             <td>${insumo.caidaPresion}</td>
             <td>${insumo.diametroCaneria}</td>
+        </tr>
         `;
-        filaDatosEcua.appendChild(nuevaFila);
+        tablaDatosEcua.appendChild(nuevaFila);
     });
 
     w.style.display = "block";
