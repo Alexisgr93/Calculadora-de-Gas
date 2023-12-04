@@ -117,13 +117,13 @@
                             <div class="col-auto">
                                 <select class="form-select form-select-sm mr-2" aria-label="Small select example">
                                     <option selected>Seleccione insumo</option>
-                                    <option value="1">Codo</option>
-                                    <option value="2">Tee</option>
-                                    <option value="3">Llave de paso</option>
+                                    <option value="Codo">Codo</option>
+                                    <option value="Tee">Tee</option>
+                                    <option value="Llave de paso">Llave de paso</option>
                                 </select>
                             </div>
                             <div class="col-auto">
-                                <input type="number" class="form-control form-control-sm mr-2" id="codos" placeholder="Cantidad de codos (un)">
+                                <input type="number" class="form-control form-control-sm mr-2" id="codos" placeholder="Cantidad de insumos (un)">
                             </div>
                             <div class="col-auto">
                                 <input type="number" class="form-control form-control-sm mr-2" id="IncPas" placeholder="Caida de presion">
@@ -139,6 +139,7 @@
                         <button type="button" class="btn btn-secondary mr-2" onclick="agregarCampos()">Agregar más</button>
                         <button type="button" class="btn btn-danger mr-2" onclick="ReiniciarEcuacion()">Reiniciar Valores</button>
                         <button type="button" class="btn btn-success" onclick="CalcularEcuacion()">Calcular Resultado</button>
+                        <button type="button" class="btn btn-primary" onclick="mostrarTablaEcuacion()">Mostrar Info</button>
                     </div>
                 </div>
                 <div class="card-footer text-bg-secondary" id="ResultadoEcua">
@@ -203,6 +204,38 @@
       </div>
   </div>
 
+
+
+  <!--Mostrar/ocultar Tabla Ecuacion-->
+  <div class="card text-bg-primary mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="mostrarTablaEcua">
+    <div class="card-header text-bg-primary">
+        Datos ingresados y Resultado obtenido
+        <button type="button" class="btn-close float-end" onclick="ocultarTablaEcua()" aria-label="Close"></button>
+    </div>
+    <div class="card-body text-bg-primary">
+        <table class="table blue-table">
+            <thead>
+                <tr>
+                    <th scope="col">Insumo</th>
+                    <th scope="col">Cant. Insumo</th>
+                    <th scope="col">C. presion</th>
+                    <th scope="col">D cañeria</th>
+                    <th scope="col">Resultado</th>
+                </tr>
+            </thead>
+            <tbody class="table blue-table">
+                <tr id="filaDatosEcua" style="color: white;">
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
       </div>
     </main>
     <footer class="d-flex justify-content-center align-items-center">
@@ -264,13 +297,6 @@
         
     }
 
-    function ReiniciarEcuacion() {
-        // Lógica para reiniciar los valores
-    }
-
-    function CalcularEcuacion() {
-        // Lógica para calcular el resultado
-    }
 </script>
     <script src="./js/index.js"></script>
     <script src="./js/tabla2.js"></script>
