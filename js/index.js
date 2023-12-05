@@ -9,8 +9,8 @@ function verificarUbicacion() {
 
         // Coordenadas del centro de la ubicación permitida
         var centerLatLng = {
-          lat: -34.6471916,
-          lng:  -58.5201163
+          lat: -34.656853,
+          lng: -58.524062
            
         };
 
@@ -23,7 +23,7 @@ function verificarUbicacion() {
         // Verificar si la distancia está dentro del radio permitido
         if (distancia <= radioTresCuadras) {
           // El usuario está dentro del área permitida, redirigir a otra página
-          window.location.href = 'index.html';
+          window.location.href = 'menu.html';
         } else {
           // El usuario está fuera del área permitida, mostrar alerta
           alert('Lo siento, estás fuera del área permitida.');

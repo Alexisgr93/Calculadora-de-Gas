@@ -1,0 +1,100 @@
+html, body, .conteiner{
+    height: 100%;
+}
+
+header{
+    height: 10%;
+    background-color: black;
+}
+
+main{
+    height: 90%;
+}
+
+
+
+.scroll {
+
+    width:100%;
+    height: 100%;
+    overflow: scroll;
+	overflow-x: hidden;
+}
+
+.text-linkedin{
+    background-color: rgb(14, 118, 168);
+}
+
+
+
+
+
+    /* Estilos personalizados para la tabla azul */
+    .blue-table {
+        background-color: #007bff;
+        color: white;
+        vertical-align: middle;
+    }
+
+    .blue-table th,
+    .blue-table td,
+    .blue-table thead th {
+        border-color: #dee2e6;
+        vertical-align: middle;
+    }
+
+    .blue-table th td{
+        background-color: rgb(13, 110, 253);
+        color: white;
+    }
+
+    .blue-table thead th {
+        background-color: rgb(13, 110, 253);
+        color: white;
+        border-color: rgb(13, 110, 253);
+    }
+
+    .blue-table tbody td {
+        background-color: rgb(13, 110, 253);
+        color: white;
+        border-color: rgb(13, 110, 253);
+    }
+
+
+
+    .pulse {
+        animation: pulse 2s infinite alternate; /* Se aplicará la animación 'pulse' durante 2 segundos, de forma infinita y alternando entre agrandar y achicar */
+      }
+      
+      @keyframes pulse {
+        0% {
+          transform: scale(1); /* Tamaño normal al inicio de la animación */
+        }
+        100% {
+          transform: scale(1.2); /* Tamaño al 120% al final de la animación */
+        }
+      }
+
+      .logoInicio {
+        position: relative;
+        margin-left: 30%;
+        margin-top: 25%;
+        height: 40%;
+        width: 40%;
+        
+      }
+      
+      #icon-container {
+        position: relative;
+      }
+      
+      #icon-container svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .fondo{
+        background-color: darkslategrey;
+      }
