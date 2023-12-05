@@ -80,12 +80,28 @@ footer{
       }
 
       .logoInicio {
+        position: relative;
         margin-right: 35%;
         margin-left: 35%;
         margin-top: 30%;
         margin-bottom: 30%;
         height: 30%;
         width: 30%;
-
         
       }
+      
+      #icon-container {
+        position: relative;
+      }
+      
+      #icon-container svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .fondo{
+        background-color: darkslategrey;
+      }
+      
