@@ -1,98 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Verificación de Ubicación</title>
-  <script>
-    function verificarUbicacion() {
-      document.getElementById('startButton').addEventListener('click', function() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var userLatLng = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+  <!--La manera de incluir boostrap en github page de manera online es la opcion 2, la opcion 1 es cuando no hay internet en github page no funciona!!-->
+	<!--Opcion 1-->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!--Opcion 2-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	
+	<!--<link rel="stylesheet" href="https://github.com/Alexisgr93/Corte-de-Materiales/blob/main/node_modules/bootstrap/dist/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!-- Tacho de basura-->
 
-            // Coordenadas del centro de la ubicación permitida
-            var centerLatLng = {
-              lat: -34.6471916,
-              lng:  -58.5201163
-               
-            };
-
-            // Calcular la distancia entre los puntos
-            var distancia = calcularDistancia(userLatLng, centerLatLng);
-
-            // Radio de 3 cuadras en metros
-            var radioTresCuadras = 300;
-
-            // Verificar si la distancia está dentro del radio permitido
-            if (distancia <= radioTresCuadras) {
-              // El usuario está dentro del área permitida, redirigir a otra página
-              window.location.href = 'index.html';
-            } else {
-              // El usuario está fuera del área permitida, mostrar alerta
-              alert('Lo siento, estás fuera del área permitida.');
-            }
-          });
-        } else {
-          // Manejar el caso en que el navegador no soporte la geolocalización
-          console.log('El navegador no soporta la geolocalización.');
-        }
-      });
-    }
-
-    // Función para calcular la distancia entre dos puntos en coordenadas
-    function calcularDistancia(puntoA, puntoB) {
-      var latDiff = (puntoA.lat - puntoB.lat) * Math.PI / 180;
-      var lngDiff = (puntoA.lng - puntoB.lng) * Math.PI / 180;
-      var a = Math.sin(latDiff / 2) * Math.sin(latDiff / 2) +
-              Math.cos(puntoA.lat * Math.PI / 180) * Math.cos(puntoB.lat * Math.PI / 180) *
-              Math.sin(lngDiff / 2) * Math.sin(lngDiff / 2);
-      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-      var distancia = 6371 * c * 1000; // Radio de la Tierra en metros
-
-      return distancia;
-    }
-  </script>
-  <script>
-    function obtenerUbicacion() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          var userLatLng = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-
-          alert('Tu ubicación actual es: ' + userLatLng.lat + ', ' + userLatLng.lng);
-        }, function(error) {
-          // Manejar errores de geolocalización
-          switch(error.code) {
-            case error.PERMISSION_DENIED:
-              alert('El usuario denegó la solicitud de geolocalización.');
-              break;
-            case error.POSITION_UNAVAILABLE:
-              alert('La información de ubicación no está disponible.');
-              break;
-            case error.TIMEOUT:
-              alert('La solicitud para obtener la ubicación del usuario ha expirado.');
-              break;
-            case error.UNKNOWN_ERROR:
-              alert('Ocurrió un error desconocido.');
-              break;
-          }
-        });
-      } else {
-        // Manejar el caso en que el navegador no soporte la geolocalización
-        alert('El navegador no soporta la geolocalización.');
-      }
-    }
-  </script>
 </head>
+
+
+
 <body>
-  <h1>Bienvenido</h1>
-  <button id="startButton">Iniciar</button>
-  <h1>Obtener Ubicación</h1>
-  <button onclick="obtenerUbicacion()">Obtener mi Ubicación</button>
-  <script>verificarUbicacion();</script>
+  <header class="d-flex justify-content-center align-items-center">
+    <button type="button" class="btn mx-2 mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16" style="color: darkkhaki;">
+        <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"/>
+      </svg>
+    </button>
+    <div class="mx-2 d-flex align-items-center">
+      <figure class="mt-4"> <!-- Agregamos margen superior de 4 para que baje-->
+        <blockquote class="blockquote" style="color: darkkhaki;">
+          <p>Calculadora de Gas</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          Creado por <cite title="Source Title">Alexis Rodriguez</cite>
+        </figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <!-- <h1>Bienvenido</h1>
+    <button onclick="verificarUbicacion()">Iniciar</button> -->
+    <button type="button" class="btn pulse logoInicio" onclick="verificarUbicacion()">
+      <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16" style="color: darkred;">
+        <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"/>
+      </svg>
+    </button>
+    <!-- En caso de necesitarlo mas adelante
+    <h1>Obtener Ubicación</h1>
+    <button onclick="obtenerUbicacion()">Obtener mi Ubicación</button>-->
+  
+  </main>
+
+</script>
+<script src="./js/index.js"></script>
+<script src="./js/tabla2.js"></script>
+<script src="./js/tabla3.js"></script>
+<script src="./js/ecuacion.js"></script>
+<script src="./js/pasarAKcal.js"></script>
+<!--OFLINE-->
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<!--ONLINE-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

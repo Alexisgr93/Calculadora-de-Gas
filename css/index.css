@@ -63,3 +63,29 @@ footer{
         color: white;
         border-color: rgb(13, 110, 253);
     }
+
+
+
+    .pulse {
+        animation: pulse 2s infinite alternate; /* Se aplicará la animación 'pulse' durante 2 segundos, de forma infinita y alternando entre agrandar y achicar */
+      }
+      
+      @keyframes pulse {
+        0% {
+          transform: scale(1); /* Tamaño normal al inicio de la animación */
+        }
+        100% {
+          transform: scale(1.2); /* Tamaño al 120% al final de la animación */
+        }
+      }
+
+      .logoInicio {
+        margin-right: 35%;
+        margin-left: 35%;
+        margin-top: 30%;
+        margin-bottom: 30%;
+        height: 30%;
+        width: 30%;
+
+        
+      }
