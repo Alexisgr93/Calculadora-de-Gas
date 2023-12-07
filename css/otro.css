@@ -8,10 +8,13 @@ header{
 }
 
 main{
-    height: 90%;
+    height: 83%;
 }
 
-
+footer{
+  height: 7%;
+  background-color: rgb(0, 0, 0);
+}
 
 .scroll {
 
