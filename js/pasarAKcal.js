@@ -19,3 +19,15 @@ function ReiniciarAppKcal() {
 
 }
 
+var zx = document.getElementById("myDIV");
+function myFunction() {
+        zx.style.display = "block";
+
+}
+function ocultarInfo() {
+    // Ocultar la tabla al hacer clic en el botón "Close"
+    
+    
+        zx.style.display = 'none';
+
+}
