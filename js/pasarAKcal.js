@@ -20,10 +20,10 @@ function ReiniciarAppKcal() {
 }
 
 var zx = document.getElementById("myDIV");
-const overlay = document.getElementById("overlay");
+const overlayIndex = document.getElementById("overlayIndex");
 function myFunction() {
         zx.style.display = "block";
-        overlay.style.display = "block";
+        overlayIndex.style.display = "block";
 
 }
 function ocultarInfo() {
@@ -31,7 +31,7 @@ function ocultarInfo() {
     
     
         zx.style.display = 'none';
-        overlay.style.display = "none";
+        overlayIndex.style.display = "none";
 
 }
 

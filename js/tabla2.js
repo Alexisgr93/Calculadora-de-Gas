@@ -152,7 +152,7 @@ function ReiniciarAppT2() {
   document.addEventListener('DOMContentLoaded', function() {
     const tablaResultado = document.getElementById('tablaResultado');
     const botonMostrarInfo = document.querySelector('.btn-group button.btn-primary');
-    const overlay = document.getElementById("overlay");
+    const overlay = document.getElementById("overlay3");
 
     function mostrarTabla() {
         // Obtener los valores ingresados
