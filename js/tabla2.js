@@ -152,6 +152,7 @@ function ReiniciarAppT2() {
   document.addEventListener('DOMContentLoaded', function() {
     const tablaResultado = document.getElementById('tablaResultado');
     const botonMostrarInfo = document.querySelector('.btn-group button.btn-primary');
+    const overlay = document.getElementById("overlay");
 
     function mostrarTabla() {
         // Obtener los valores ingresados
@@ -169,11 +170,13 @@ function ReiniciarAppT2() {
 
         // Mostrar la tabla oculta
         tablaResultado.style.display = 'block';
+        overlay.style.display = 'block';
     }
 
     function ocultarTabla() {
         // Ocultar la tabla al hacer clic en el botón "Close"
         tablaResultado.style.display = 'none';
+        overlay.style.display = 'none';
     }
 
     botonMostrarInfo.addEventListener('click', mostrarTabla);

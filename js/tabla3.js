@@ -205,6 +205,7 @@ function Tabla3() {
 
         // Declara x fuera de las funciones para que esté accesible para ambas
 const x = document.getElementById("mostrarTabla3");
+const overlay = document.getElementById("overlay2");
 //const z = document.getElementById(mostrarTablaCaudal());
 const botonMostrarTabla3 = document.querySelector('.btn.btn-primary');
         function mostrarTablaCaudal() {
@@ -221,11 +222,13 @@ const botonMostrarTabla3 = document.querySelector('.btn.btn-primary');
                 <td>${resultadoTablaCaudal}</td>
             `;
                 x.style.display = "block";
+                overlay.style.display = "block";
             }
         
         function ocultarTabla3() {
             // Ocultar la tabla al hacer clic en el botón "Close"
             x.style.display = 'none';
+            overlay.style.display = "none";
             
         }
         
