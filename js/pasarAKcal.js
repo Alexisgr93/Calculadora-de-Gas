@@ -20,8 +20,10 @@ function ReiniciarAppKcal() {
 }
 
 var zx = document.getElementById("myDIV");
+const overlay = document.getElementById("overlay");
 function myFunction() {
         zx.style.display = "block";
+        overlay.style.display = "block";
 
 }
 function ocultarInfo() {
@@ -29,5 +31,14 @@ function ocultarInfo() {
     
     
         zx.style.display = 'none';
+        overlay.style.display = "none";
 
 }
+
+
+
+document.addEventListener('mouseup', function(e) {
+    if (zx.style.display === 'block' && !zx.contains(e.target)) {
+        ocultarInfo();
+    }
+});
