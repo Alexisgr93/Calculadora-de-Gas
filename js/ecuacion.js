@@ -50,6 +50,51 @@ function CalcularEcuacion() {
     }
 }
 
+let contador = 1;
+
+    function agregarCampos() {
+      
+        contador++;
+        const camposExtras = document.getElementById('camposExtras');
+
+        // Agregar línea divisoria después de agregar la nueva fila
+        const lineaDivisoria = document.createElement('hr');
+        camposExtras.appendChild(lineaDivisoria);
+
+        const nuevaFila = document.createElement('div');
+        nuevaFila.classList.add('row', 'g-2', 'align-items-center');
+
+        nuevaFila.innerHTML = `
+            <div class="col-auto">
+                <select class="form-select form-select-sm mr-2" aria-label="Small select example">
+                    <option selected>Seleccione insumo</option>
+                    <option value="Codo">Codo</option>
+                    <option value="Tee">Tee</option>
+                    <option value="Llave de paso">Llave de paso</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control form-control-sm mr-2" placeholder="Cantidad de codos (un)">
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control form-control-sm mr-2" placeholder="Inclinación de pasaje">
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control form-control-sm mr-2" placeholder="Diámetro cañería (Metros)">
+            </div>
+        `;
+        
+
+        // Agregar manejo de evento 'change' para actualizar la tabla al cambiar valores
+        nuevaFila.querySelectorAll('input, select').forEach(element => {
+        element.addEventListener('change', mostrarTablaEcuacion);
+    });
+    
+
+        camposExtras.appendChild(nuevaFila);
+
+        
+    }
 
 function ReiniciarEcuacion() {
     location.reload(); // Recarga la página actual

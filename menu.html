@@ -1,247 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="es">
+  <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu</title>
     <link rel="stylesheet" href="./css/index.css">
-  <!--La manera de incluir boostrap en github page de manera online es la opcion 2, la opcion 1 es cuando no hay internet en github page no funciona!!-->
-	<!--Opcion 1-->
-	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <!--Opcion 2-->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-	
-	<!--<link rel="stylesheet" href="https://github.com/Alexisgr93/Corte-de-Materiales/blob/main/node_modules/bootstrap/dist/css/bootstrap.min.css">-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!-- Tacho de basura-->
+    <!--La manera de incluir boostrap en github page de manera online es la opcion 2, la opcion 1 es cuando no hay internet en github page no funciona!!-->
+    <!--Opcion 1-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--Opcion 2-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!--<link rel="stylesheet" href="https://github.com/Alexisgr93/Corte-de-Materiales/blob/main/node_modules/bootstrap/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!-- Tacho de basura-->
 
-</head>
-<body>
+  </head>
+
+  <body>
   
-  <header class="d-flex justify-content-center align-items-center">
-    <div id="overlay3"></div>
-    <div id="overlay2"></div>
-    <button type="button" class="btn mx-1 mb-0">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16" style="color: darkkhaki;">
-        <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"/>
-      </svg>
-    </button>
-    <div class="mx-1 d-flex align-items-center"> <!--mx-1 es la separacion de logo -->
-      <figure class="mt-4"> <!-- Agregamos margen superior de 4 para que baje-->
-        <blockquote class="blockquote" style="color: darkkhaki;">
-          <p>Calculadora de Gas</p>
-        </blockquote>
-        <figcaption class="blockquote-footer">
-          Creado por <cite title="Source Title">Alexis Rodriguez</cite>
-        </figcaption>
-      </figure>
-    </div>
-  </header>
-    <main>
-      <div class="scroll">
-      <section>
-          <form>
-            <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
-              <div class="card-header">
-                <h3>Calculadora de Prolongacion</h3>
-              </div>
-              <div class="card-body text-bg-light p-3">
-                <h5 class="card-title">Ingrese la Cantidad de Medidores</h5>
-                <input type="number" class="form-control" id="CantMedidores" placeholder="Valor en Unidad">
-                <br>
-                <h5 class="card-title">Ingrese la Longitud de Prolongacion</h5>
-                <input type="number" class="form-control" id="LongMetro" placeholder="Valor en Metros">
-                <br>
-                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                  <button type="button" class="btn btn-danger" onclick="ReiniciarAppT2()">Reiniciar Valores</button>
-                  <button type="button" class="btn btn-success" onclick="Tabla2()">Calcular Resultado</button>
-                  <button type="button" class="btn btn-primary" onclick="mostrarTabla()">Mostrar Info</button>
-                </div>
-                <!--<input type="button" class="btn btn-primary" onclick="Tabla2()" value="Calcular"></input> -->
-              </div>
-              <div class="card-footer text-bg-secondary" id="Resultado">
-                Resultado:
-              </div>
-            </div>
-          </form>
-          <form>
-            <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
-              <div class="card-header">
-                <h3>Calculadora de Caudal</h3>
-              </div>
-              <div class="card-body text-bg-light p-3">
-                <h5 class="card-title">Ingrese el Diametro de Cañeria</h5>
-                <input type="number" class="form-control" id="Diametro" placeholder="Valor en mm">
-                <br>
-                <h5 class="card-title">Ingrese la Longitud de Cañeria</h5>
-                <input type="number" class="form-control" id="LongCan" placeholder="Valor en Metros">
-                <br>
-                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                  <button type="button" class="btn btn-danger" onclick="ReiniciarAppT3()">Reiniciar Valores</button>
-                  <button type="button" class="btn btn-success" onclick="Tabla3()">Calcular Resultado</button>
-                  <button type="button" class="btn btn-primary" onclick="mostrarTablaCaudal()">Mostrar Info</button>
-                </div>
-                <!-- <input type="button" class="btn btn-primary" onclick="Tabla3()" value="Calcular"></input> -->
-              </div>
-              <div class="card-footer text-bg-secondary" id="ResultadoTabla3">
-                Resultado:
-              </div>
-            </div>
-          </form>
-          <form>
-            <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
-              <div class="card-header">
-                <h3>Calculadora de Kcal a m³/h</h3>
-              </div>
-              <div class="card-body text-bg-light p-3">
-                <h5 class="card-title">Ingrese el Valor de Kcal</h5>
-                <input type="number" class="form-control" id="Kcal" placeholder="Valor en Kcal">
-                <br>
-                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                  <button type="button" class="btn btn-danger" onclick="ReiniciarAppKcal()">Reiniciar Valores</button>
-                  <button type="button" class="btn btn-success" onclick="PasarKcal()">Calcular Resultado</button>
-                </div>
-                <!-- <input type="button" class="btn btn-primary" onclick="Tabla3()" value="Calcular"></input> -->
-              </div>
-              <div class="card-footer text-bg-secondary" id="ResultadoKcal">
-                Resultado:
-              </div>
-            </div>
-          </form>
+    <header class="d-flex justify-content-center align-items-center">
+      <div id="overlay3"></div>
+      <div id="overlay2"></div>
+      <button type="button" class="btn mx-1 mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16" style="color: darkkhaki;">
+          <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"/>
+        </svg>
+      </button>
+      <div class="mx-1 d-flex align-items-center"> <!--mx-1 es la separacion de logo -->
+        <figure class="mt-4"> <!-- Agregamos margen superior de 4 para que baje-->
+          <blockquote class="blockquote" style="color: darkkhaki;">
+            <p>Calculadora de Gas</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Creado por <cite title="Source Title">Alexis Rodriguez</cite>
+          </figcaption>
+        </figure>
+      </div>
+    </header>
 
-          <form class="form-inline">
-            <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
+    <main>
+
+      <div class="scroll">
+
+        <section>
+
+            <form>
+              <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
                 <div class="card-header">
-                    <h3>Seleccionar insumo e ingresar valores</h3>
+                  <h3>Calculadora de Prolongacion</h3>
                 </div>
                 <div class="card-body text-bg-light p-3">
-                    <div id="formularioInicial">
+                  <h5 class="card-title">Ingrese la Cantidad de Medidores</h5>
+                  <input type="number" class="form-control" id="CantMedidores" placeholder="Valor en Unidad">
+                  <br>
+                  <h5 class="card-title">Ingrese la Longitud de Prolongacion</h5>
+                  <input type="number" class="form-control" id="LongMetro" placeholder="Valor en Metros">
+                  <br>
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="ReiniciarAppT2()">Reiniciar Valores</button>
+                    <button type="button" class="btn btn-success" onclick="Tabla2()">Calcular Resultado</button>
+                    <button type="button" class="btn btn-primary" onclick="mostrarTabla()">Mostrar Info</button>
+                  </div>
+                  <!--<input type="button" class="btn btn-primary" onclick="Tabla2()" value="Calcular"></input> -->
+                </div>
+                <div class="card-footer text-bg-secondary" id="Resultado">
+                  Resultado:
+                </div>
+              </div>
+            </form>
+
+            <form>
+              <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
+                <div class="card-header">
+                  <h3>Calculadora de Caudal</h3>
+                </div>
+                <div class="card-body text-bg-light p-3">
+                  <h5 class="card-title">Ingrese el Diametro de Cañeria</h5>
+                  <input type="number" class="form-control" id="Diametro" placeholder="Valor en mm">
+                  <br>
+                  <h5 class="card-title">Ingrese la Longitud de Cañeria</h5>
+                  <input type="number" class="form-control" id="LongCan" placeholder="Valor en Metros">
+                  <br>
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="ReiniciarAppT3()">Reiniciar Valores</button>
+                    <button type="button" class="btn btn-success" onclick="Tabla3()">Calcular Resultado</button>
+                    <button type="button" class="btn btn-primary" onclick="mostrarTablaCaudal()">Mostrar Info</button>
+                  </div>
+                  <!-- <input type="button" class="btn btn-primary" onclick="Tabla3()" value="Calcular"></input> -->
+                </div>
+                <div class="card-footer text-bg-secondary" id="ResultadoTabla3">
+                  Resultado:
+                </div>
+              </div>
+            </form>
+
+            <form>
+              <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
+                <div class="card-header">
+                  <h3>Calculadora de Kcal a m³/h</h3>
+                </div>
+                <div class="card-body text-bg-light p-3">
+                  <h5 class="card-title">Ingrese el Valor de Kcal</h5>
+                  <input type="number" class="form-control" id="Kcal" placeholder="Valor en Kcal">
+                  <br>
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="ReiniciarAppKcal()">Reiniciar Valores</button>
+                    <button type="button" class="btn btn-success" onclick="PasarKcal()">Calcular Resultado</button>
+                  </div>
+                  <!-- <input type="button" class="btn btn-primary" onclick="Tabla3()" value="Calcular"></input> -->
+                </div>
+                <div class="card-footer text-bg-secondary" id="ResultadoKcal">
+                  Resultado:
+                </div>
+              </div>
+            </form>
+
+            <form class="form-inline">
+              <div class="card text-center mb-3 text-bg-secondary" style="width: 90%; margin-left: 5%; margin-top: 2%;">
+                  <div class="card-header">
+                      <h3>Seleccionar insumo e ingresar valores</h3>
+                  </div>
+                  <div class="card-body text-bg-light p-3">
+                      <div id="formularioInicial">
                         <!-- Campos iniciales -->
                         <div class="row g-2 align-items-center">
-                            <div class="col-auto">
-                                <select class="form-select form-select-sm mr-2" aria-label="Small select example">
-                                    <option selected>Seleccione insumo</option>
-                                    <option value="Codo">Codo</option>
-                                    <option value="Tee">Tee</option>
-                                    <option value="Llave de paso">Llave de paso</option>
-                                </select>
-                            </div>
-                            <div class="col-auto">
-                                <input type="number" class="form-control form-control-sm mr-2" id="codos" placeholder="Cantidad de insumos (un)">
-                            </div>
-                            <div class="col-auto">
-                                <input type="number" class="form-control form-control-sm mr-2" id="IncPas" placeholder="Caida de presion">
-                            </div>
-                            <div class="col-auto">
-                                <input type="number" class="form-control form-control-sm mr-2" id="DiamCa" placeholder="Diámetro cañería (Metros)">
-                            </div>
+                          <div class="col-auto">
+                            <select class="form-select form-select-sm mr-2" aria-label="Small select example">
+                              <option selected>Seleccione insumo</option>
+                              <option value="Codo">Codo</option>
+                              <option value="Tee">Tee</option>
+                              <option value="Llave de paso">Llave de paso</option>
+                            </select>
+                          </div>
+                          <div class="col-auto">
+                            <input type="number" class="form-control form-control-sm mr-2" id="codos" placeholder="Cantidad de insumos (un)">
+                          </div>
+                          <div class="col-auto">
+                            <input type="number" class="form-control form-control-sm mr-2" id="IncPas" placeholder="Caida de presion">
+                          </div>
+                          <div class="col-auto">
+                            <input type="number" class="form-control form-control-sm mr-2" id="DiamCa" placeholder="Diámetro cañería (Metros)">
+                          </div>
                         </div>
-                    </div>
-                    <div id="camposExtras"></div>
-                    <br>
-                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      </div>
+                      <div id="camposExtras"></div>
+                      <br>
+                      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                         <button type="button" class="btn btn-secondary mr-2" onclick="agregarCampos()">Agregar más</button>
                         <button type="button" class="btn btn-danger mr-2" onclick="ReiniciarEcuacion()">Reiniciar Valores</button>
                         <button type="button" class="btn btn-success" onclick="CalcularEcuacion()">Calcular Resultado</button>
                         <!-- No logre mostrar la info una abajo de otra fila, sino que se agregaba al lado y de ahi bajaba-->
                         <!--<button type="button" class="btn btn-primary" onclick="mostrarTablaEcuacion()">Mostrar Info</button>-->
-                    </div>
-                </div>
-                <div class="card-footer text-bg-secondary" id="ResultadoEcua">
-                    Resultado:
-                </div>
-            </div>
-        </form>
-        
-        
-      </section>
+                      </div>
+                  </div>
+                  <div class="card-footer text-bg-secondary" id="ResultadoEcua">
+                      Resultado:
+                  </div>
+              </div>
+            </form>
+          
+        </section>
 
-
-      <div class="card text-bg-primary mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="tablaResultado">
-        <div class="card-header text-bg-primary">
-            Datos y Resultados equivalentes para Tabla
-            <button type="button" class="btn-close float-end" onclick="ocultarTabla()" aria-label="Close"></button>
+        <div class="card text-bg-primary mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="tablaResultado">
+          <div class="card-header text-bg-primary">
+              Datos y Resultados equivalentes para Tabla
+              <button type="button" class="btn-close float-end" onclick="ocultarTabla()" aria-label="Close"></button>
+          </div>
+          <div class="card-body text-bg-primary">
+              <table class="table blue-table">
+                  <thead>
+                      <tr>
+                          <th scope="col">Cantidad de Medidores</th>
+                          <th scope="col">Longitud de Prolongación</th>
+                          <th scope="col">Resultado Tabla 2</th>
+                      </tr>
+                  </thead>
+                  <tbody class="table blue-table">
+                      <tr id="filaDatos" style="color: white;">
+                          <td>--</td>
+                          <td>--</td>
+                          <td>--</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
         </div>
-        <div class="card-body text-bg-primary">
-            <table class="table blue-table">
-                <thead>
-                    <tr>
-                        <th scope="col">Cantidad de Medidores</th>
-                        <th scope="col">Longitud de Prolongación</th>
-                        <th scope="col">Resultado Tabla 2</th>
-                    </tr>
-                </thead>
-                <tbody class="table blue-table">
-                    <tr id="filaDatos" style="color: white;">
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <!--Mostrar/ocultar Tabla 3-->
+        <div class="card text-bg-primary mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="mostrarTabla3">
+          <div class="card-header text-bg-primary">
+              Datos y Resultados equivalentes para Tabla 3
+              <button type="button" class="btn-close float-end" onclick="ocultarTabla3()" aria-label="Close"></button>
+          </div>
+          <div class="card-body text-bg-primary">
+              <table class="table blue-table">
+                  <thead>
+                      <tr>
+                          <th scope="col">Cantidad de Medidores</th>
+                          <th scope="col">Longitud de Prolongación</th>
+                          <th scope="col">Resultado Tabla 3</th>
+                      </tr>
+                  </thead>
+                  <tbody class="table blue-table">
+                      <tr id="filaDatos3" style="color: white;">
+                          <td>--</td>
+                          <td>--</td>
+                          <td>--</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
         </div>
-    </div>
 
-
-    <!--Mostrar/ocultar Tabla 3-->
-    <div class="card text-bg-primary mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="mostrarTabla3">
-      <div class="card-header text-bg-primary">
-          Datos y Resultados equivalentes para Tabla 3
-          <button type="button" class="btn-close float-end" onclick="ocultarTabla3()" aria-label="Close"></button>
-      </div>
-      <div class="card-body text-bg-primary">
-          <table class="table blue-table">
-              <thead>
-                  <tr>
-                      <th scope="col">Cantidad de Medidores</th>
-                      <th scope="col">Longitud de Prolongación</th>
-                      <th scope="col">Resultado Tabla 3</th>
-                  </tr>
-              </thead>
-              <tbody class="table blue-table">
-                  <tr id="filaDatos3" style="color: white;">
-                      <td>--</td>
-                      <td>--</td>
-                      <td>--</td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-  </div>
-
-
-
-  <!--Mostrar/ocultar Tabla Ecuacion-->
-  <div class="card text-bg-primary mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="mostrarTablaEcua">
-    <div class="card-header text-bg-primary">
-        Datos ingresados y Resultado obtenido
-        <button type="button" class="btn-close float-end" onclick="ocultarTablaEcua()" aria-label="Close"></button>
-    </div>
-    <div class="card-body text-bg-primary">
-        <table class="table blue-table">
-            <thead>
-                <tr>
-                    <th scope="col">Insumo</th>
-                    <th scope="col">Cant. Insumo</th>
-                    <th scope="col">C. presion</th>
-                    <th scope="col">D cañeria</th>
-                    <th scope="col">Resultado</th>
-                </tr>
-            </thead>
-            <tbody class="table blue-table">
-                <tr id="filaDatosEcua" style="color: white;">
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+        <!--Mostrar/ocultar Tabla Ecuacion-->
+        <div class="card text-bg-primary mt-3 mx-auto" style="width: 90%; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1" id="mostrarTablaEcua">
+          <div class="card-header text-bg-primary">
+              Datos ingresados y Resultado obtenido
+              <button type="button" class="btn-close float-end" onclick="ocultarTablaEcua()" aria-label="Close"></button>
+          </div>
+          <div class="card-body text-bg-primary">
+              <table class="table blue-table">
+                  <thead>
+                      <tr>
+                          <th scope="col">Insumo</th>
+                          <th scope="col">Cant. Insumo</th>
+                          <th scope="col">C. presion</th>
+                          <th scope="col">D cañeria</th>
+                          <th scope="col">Resultado</th>
+                      </tr>
+                  </thead>
+                  <tbody class="table blue-table">
+                      <tr id="filaDatosEcua" style="color: white;">
+                          <td>--</td>
+                          <td>--</td>
+                          <td>--</td>
+                          <td>--</td>
+                          <td>--</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+        </div>
 
       </div>
+
     </main>
+
     <footer class="d-flex justify-content-center align-items-center">
       
       <a href="https://www.linkedin.com/in/alexis-gabriel-rodriguez-45772a84/" class="btn btn-primary mx-2" style="text-decoration: none;">
@@ -262,59 +267,7 @@
         </button>
       
     </footer> 
-    <script>
 
-
-      
-  </script> 
-  <script>
-    let contador = 1;
-
-    function agregarCampos() {
-      
-        contador++;
-        const camposExtras = document.getElementById('camposExtras');
-
-        // Agregar línea divisoria después de agregar la nueva fila
-        const lineaDivisoria = document.createElement('hr');
-        camposExtras.appendChild(lineaDivisoria);
-
-        const nuevaFila = document.createElement('div');
-        nuevaFila.classList.add('row', 'g-2', 'align-items-center');
-
-        nuevaFila.innerHTML = `
-            <div class="col-auto">
-                <select class="form-select form-select-sm mr-2" aria-label="Small select example">
-                    <option selected>Seleccione insumo</option>
-                    <option value="Codo">Codo</option>
-                    <option value="Tee">Tee</option>
-                    <option value="Llave de paso">Llave de paso</option>
-                </select>
-            </div>
-            <div class="col-auto">
-                <input type="number" class="form-control form-control-sm mr-2" placeholder="Cantidad de codos (un)">
-            </div>
-            <div class="col-auto">
-                <input type="number" class="form-control form-control-sm mr-2" placeholder="Inclinación de pasaje">
-            </div>
-            <div class="col-auto">
-                <input type="number" class="form-control form-control-sm mr-2" placeholder="Diámetro cañería (Metros)">
-            </div>
-        `;
-        
-
-        // Agregar manejo de evento 'change' para actualizar la tabla al cambiar valores
-        nuevaFila.querySelectorAll('input, select').forEach(element => {
-        element.addEventListener('change', mostrarTablaEcuacion);
-    });
-    
-
-        camposExtras.appendChild(nuevaFila);
-
-        
-    }
-
-</script>
     <script src="./js/index.js"></script>
     <script src="./js/tabla2.js"></script>
     <script src="./js/tabla3.js"></script>
@@ -324,5 +277,7 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <!--ONLINE-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+  
+  </body>
+  
 </html>

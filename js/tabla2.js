@@ -111,6 +111,12 @@ function obtenerValorAjustado(valor, lista) {
         return; // Detener la ejecución si los números no son válidos
     }
 
+    // Verificar si los números no excede el limite maximo de tabla
+    if (longitudMetro > 120 || cantidadMedidores > 120) {
+        alert("El numero ingresado se excede al limite maximo de la tabla mas un 20% adicional, (longitud de medidores por tabla 100, Cantidad de medidores por tabla 100), ingrese un numero igual o inferior o maximo de 20% adicional!");
+        document.getElementById("Resultado").innerText = `Resultado: `; //vuelve el resultado a sin valor despues del alert
+         return; // Detener la ejecución si los números no son válidos
+     }
 
     longitudMetro = obtenerValorAjustado(longitudMetro, valoresLongitud);
     cantidadMedidores = obtenerValorAjustado(cantidadMedidores, valoresMedidores);

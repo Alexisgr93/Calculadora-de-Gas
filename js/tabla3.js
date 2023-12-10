@@ -161,7 +161,13 @@ function Tabla3() {
            document.getElementById("ResultadoTabla3").innerText = `Resultado: `; //vuelve el resultado a sin valor despues del alert
             return; // Detener la ejecución si los números no son válidos
         }
-    
+        
+        // Verificar si los números no excede el limite maximo de tabla
+        if (Diametro > 101 || LongCan > 240) {
+            alert("El numero ingresado se excede al limite maximo de la tabla mas un 20% adicional, (longitud de cañeria por tabla 200, Diametro de caño por tabla 101), ingrese un numero igual o inferior o maximo de 20% adicional para la logitud de cañeria, para el diametro de cañeria debe ser igual a 101!");
+            document.getElementById("Resultado").innerText = `Resultado: `; //vuelve el resultado a sin valor despues del alert
+            return; // Detener la ejecución si los números no son válidos
+        }
     
         Diametro = obtenerValorAjustado(Diametro, valoresDiametro);
         LongCan = obtenerValorAjustado(LongCan, valoresLongCan);
