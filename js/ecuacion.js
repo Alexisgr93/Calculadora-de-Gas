@@ -17,7 +17,7 @@ function CalcularEcuacion() {
             document.getElementById("ResultadoEcua").innerText = `Resultado:`;
             return;
         }
-    
+        
 
     filas.forEach((fila) => {
        
@@ -26,9 +26,13 @@ function CalcularEcuacion() {
         let DiamCa = fila.querySelector('input[placeholder="Diámetro cañería (Metros)"]').value;
 
         
+            let Resultado = codos * IncPas * DiamCa;
+            sumaResultados += parseFloat(Resultado || 0);
+            
+        
 
-        let Resultado = codos * IncPas * DiamCa;
-        sumaResultados += parseFloat(Resultado || 0); // Asegúrate de sumar un valor numérico
+
+         // Asegúrate de sumar un valor numérico
     });
 
     let codos1 = document.getElementById("codos").value;
@@ -37,6 +41,12 @@ function CalcularEcuacion() {
         let Resultado1 = codos1 * IncPas1 * DiamCa1;
         total = Resultado1 + sumaResultados;
     document.getElementById("ResultadoEcua").innerText = `Resultado: ${Number(total.toFixed(2))} m³/h`;
+
+    if(codos1 <= 0 || DiamCa1 <=0 || IncPas1 <=0 ){
+        alert('Ingrese un valor mayor a 0.');
+            document.getElementById("ResultadoEcua").innerText = `Resultado:`;
+            return;
+    }
 }
 
 
@@ -49,7 +59,7 @@ function CalcularEcuacion() {
 
 var w = document.getElementById("mostrarTablaEcua");
 const botonMostrarTablaEcua = document.querySelector('.btn.btn-primary');
-  function mostrarTablaEcuacion() {
+function mostrarTablaEcuacion() {
     
 
     const insumo = document.querySelector('.form-select').value;
@@ -79,7 +89,8 @@ const botonMostrarTablaEcua = document.querySelector('.btn.btn-primary');
         
     });
     
-    const tablaDatosEcua = document.querySelector('#filaDatosEcua'); // Selecciona el tbody de la tabla
+    /* muestra la tabla
+    const tablaDatosEcua = document.querySelector('#filaDatosEcua'); // Selecciona el tbody de la tabla */
     // Mostrar los valores en la tabla oculta
     tablaDatosEcua.innerHTML = `
       <td>${insumo}</td>
@@ -108,11 +119,12 @@ const botonMostrarTablaEcua = document.querySelector('.btn.btn-primary');
 
     w.style.display = "block";
   }
+
   function ocultarTablaEcua() {
     // Ocultar la tabla al hacer clic en el botón "Close"
     w.style.display = 'none';
     
-}
+    }
 
 document.addEventListener('mouseup', function(e) {
     if (w.style.display === 'block' && !w.contains(e.target) && e.target !== botonMostrarTablaEcua) {
