@@ -25,14 +25,15 @@ function CalcularEcuacion() {
         let IncPas = fila.querySelector('input[placeholder="Inclinación de pasaje"]').value;
         let DiamCa = fila.querySelector('input[placeholder="Diámetro cañería (Metros)"]').value;
 
-        
+
+            // Asegúrate de sumar un valor numérico
             let Resultado = codos * IncPas * DiamCa;
             sumaResultados += parseFloat(Resultado || 0);
             
         
 
 
-         // Asegúrate de sumar un valor numérico
+         
     });
 
     let codos1 = document.getElementById("codos").value;
