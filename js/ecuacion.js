@@ -51,7 +51,9 @@ function CalcularEcuacion() {
 }
 
 
-
+function ReiniciarEcuacion() {
+    location.reload(); // Recarga la página actual
+  }
 
 
 

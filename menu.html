@@ -301,11 +301,13 @@
                 <input type="number" class="form-control form-control-sm mr-2" placeholder="Diámetro cañería (Metros)">
             </div>
         `;
+        
 
         // Agregar manejo de evento 'change' para actualizar la tabla al cambiar valores
         nuevaFila.querySelectorAll('input, select').forEach(element => {
         element.addEventListener('change', mostrarTablaEcuacion);
     });
+    
 
         camposExtras.appendChild(nuevaFila);
 
