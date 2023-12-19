@@ -42,7 +42,7 @@
             <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
           </svg>
         </button>
-        <button src="../menu.html" class="btn justify-content-center align-items-center start-0" style="position: absolute; color: darkkhaki; margin-right: 0px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <button onclick="window.location.href='../menu.html'" class="btn justify-content-center align-items-center start-0" style="position: absolute; color: darkkhaki; margin-right: 0px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
           </svg>
@@ -70,9 +70,40 @@
 
 
     
-    <!-- En caso de necesitarlo mas adelante
-    <h1>Obtener Ubicación</h1>
-    <button onclick="obtenerUbicacion()">Obtener mi Ubicación</button>-->
+    <!--offcanvas-end (menu desplegable de derecha a izquierda); offcanvas-start (menu desplegable de izquierda a derecha) -->
+        <!--offcanvas-bottom (menu desplegable de abajo a arriba); offcanvas-top (menu desplegable de arriba a abajo) -->
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" style="background-color: darkslategray;" aria-labelledby="offcanvasWithBothOptionsLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel" style="color: aliceblue;">Menu Tablas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <hr style="color: darkkhaki;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./tabla3.html" style="color: aliceblue;">Ver Tabla Caudal</a>
+              </li>
+              <hr style="color: darkkhaki;">
+              <li class="nav-item">
+                <a class="nav-link" href="./tabla2.html" style="color: aliceblue;">Ver Tabla Prolongacion</a>
+              </li>
+              <hr style="color: darkkhaki;">
+            </ul>
+          </div>
+          <br>
+          <div class="offcanvas-footer d-flex align-items-center justify-content-center h5">
+            <figcaption class="blockquote-footer">
+              Creado por <cite title="Source Title">Alexis Rodriguez</cite>
+            </figcaption>
+          </div>
+        </div>
+
+        <style>
+          .navbar-nav hr {
+            margin-top: 0.1rem; /* Ajusta el margen superior */
+            margin-bottom: 0.1rem; /* Ajusta el margen inferior */
+          }
+        </style>
   
   </main>
     <footer class="d-flex justify-content-center align-items-center">

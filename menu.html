@@ -250,26 +250,23 @@
 
         <!--offcanvas-end (menu desplegable de derecha a izquierda); offcanvas-start (menu desplegable de izquierda a derecha) -->
         <!--offcanvas-bottom (menu desplegable de abajo a arriba); offcanvas-top (menu desplegable de arriba a abajo) -->
-        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" style="background-color: darkgray;" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" style="background-color: darkslategray;" aria-labelledby="offcanvasWithBothOptionsLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu Tablas</h5>
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel" style="color: aliceblue;">Menu Tablas</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body ">
-            
-            <div class="card align-items-center" style="width: 100%;">
-              <img src="./img/Tabla 2.png" class="card-img-top" style="height: 200px;" alt="...">
-              <div class="card-body">
-                <p class="card-text">Ver tabla Prolongacion</p>
-              </div>
-            </div>
-            <br>
-            <div class="card align-items-center" style="width: 100%;">
-              <img src="./img/tabal caudal.png" class="card-img-top" style="height: 200px;" alt="...">
-              <div class="card-body">
-                <p class="card-text">Ver tabla Caudal</p>
-              </div>
-            </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <hr style="color: darkkhaki;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./acciones/tabla3.html" style="color: aliceblue;">Ver Tabla Caudal</a>
+              </li>
+              <hr style="color: darkkhaki;">
+              <li class="nav-item">
+                <a class="nav-link" href="./acciones/tabla2.html" style="color: aliceblue;">Ver Tabla Prolongacion</a>
+              </li>
+              <hr style="color: darkkhaki;">
+            </ul>
           </div>
           <br>
           <div class="offcanvas-footer d-flex align-items-center justify-content-center h5">
@@ -279,8 +276,12 @@
           </div>
         </div>
 
-      </div>
-
+        <style>
+          .navbar-nav hr {
+            margin-top: 0.1rem; /* Ajusta el margen superior */
+            margin-bottom: 0.1rem; /* Ajusta el margen inferior */
+          }
+        </style>
     </main>
 
     <footer class="d-flex justify-content-center align-items-center">
