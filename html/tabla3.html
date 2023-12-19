@@ -14,6 +14,9 @@
 	<!--<link rel="stylesheet" href="https://github.com/Alexisgr93/Corte-de-Materiales/blob/main/node_modules/bootstrap/dist/css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!-- Tacho de basura-->
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
+
 </head>
 <body class="fondo">
     <header class="d-flex justify-content-center align-items-center">
@@ -47,16 +50,23 @@
       </header>
   <main>
 
-    <section>
+    <section class="fondo d-flex justify-content-center align-items-center" style="height: 100%;">
 
-        <div id="imagen" class="btn justify-content-center align-items-center">
-            <img src="../img/Tabla 2.png"  style="width: 100%; height: 100%;">
+      <div class="card text-center w-75" style="width: 18rem;">
+        <img src="../img/tabal caudal.png" class="card-img-top" style="height: 500px;" alt="Tabla N°3 Caudal">
+        <div class="card-body">
+          <h5 class="card-title">Tabla N°3 Caudal</h5>
+          <br>
+          <a class="btn btn-primary align-items-center" data-fancybox href="../img/tabal caudal.png" data-caption="Tabla N°3 Caudal">Ver Tabla</a>
         </div>
-      
-    </section>
+      </div>
 
-    
-    
+   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind('[data-fancybox]', {
+        //
+      });    
+    </script>
 
 
     
@@ -85,6 +95,9 @@
           </a>
         
       </footer> 
+
+
+
 
     <script src="../js/index.js"></script>
     <script src="../js/tabla2.js"></script>
