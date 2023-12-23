@@ -51,12 +51,51 @@
         <h5 class="card-title">Bienvenidos a Calculadora de Gas!!</h5><br>
         <p class="card-text">Esta Calculadora es un desarrollo de app, solo para una ubicacion en especifico, 
           si usted quiere probar la app, por favor pongase en contacto con algunos de los botones que
-        se encuentran en la parte inferior de la app!!</p>
-        <p>(Haga click a afuera del texto para salir)</p>
-        <p>Saludos coordiales!!</p>
+        se encuentran en la parte inferior de la app!!<br>
+      </div>
+      <div class="card-footer" id="accessSection">
+        <p>O si desea ingresar para probar la app apriete el boton!</p>
+        <button id="accessButton" onclick="allowAccess()">Acceder</button>
+      </div>
+      <div class="card-footer" id="accessLimite" style="display: none;">
+        <p>Se acabo el numero de ingresos, ponte en contacto!<br>
+          (Haga click a afuera del texto para salir)<br>
+          Saludos coordiales!!</p>
       </div>
     </div>
 
+    <script>
+      function allowAccess() {
+        let buttonClicks = localStorage.getItem("buttonClicks");
+  
+        if (!buttonClicks) {
+          buttonClicks = 0;
+        }
+  
+        if (buttonClicks < 3) {
+          buttonClicks++;
+          localStorage.setItem("buttonClicks", buttonClicks);
+          window.location.href = "menu.html"
+  
+          if (buttonClicks === 3) {
+            alert("¡Has usado el botón tres veces! Redireccionando...");
+            window.location.href = "menu.html"; // URL de la página deseada
+            
+            // Deshabilitar el botón después del tercer uso
+            document.getElementById("accessButton").disabled = true;
+          } else {
+            alert(`Acceso concedido, te quedan ${3 - buttonClicks} usos`);
+          }
+        } else {
+          alert("Has excedido el límite de usos del botón.");
+          const accessSection = document.getElementById('accessSection'); 
+          accessSection.style.display = 'none';
+
+          const accessLimite = document.getElementById('accessLimite');
+          accessLimite.style.display = 'Block';
+        }
+      }
+    </script>
     <!-- <h1>Bienvenido</h1>
     <button onclick="verificarUbicacion()">Iniciar</button> -->
     <div class="container d-flex justify-content-center align-items-center" style="height: 100%;"> <!--poner esto para saber el centrado y que tome el 100% del main: border" style="height: 100%;"-->
