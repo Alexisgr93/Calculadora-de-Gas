@@ -80,3 +80,39 @@ function obtenerUbicacion() {
       alert('El navegador no soporta la geolocalización.');
     }
   }
+
+
+  //ACCESO SIN UBICACION
+  function allowAccess() {
+    let buttonClicks = localStorage.getItem("buttonClicks");
+
+    if (!buttonClicks) {
+      buttonClicks = 0;
+    }
+
+    if (buttonClicks < 1) {
+      buttonClicks++;
+      localStorage.setItem("buttonClicks", buttonClicks);
+      window.location.href = "menu.html"
+      
+      /*
+      //En el caso que quiera 3 accesos
+      if (buttonClicks === 3) {
+        alert("¡Has usado el botón tres veces! Redireccionando...");
+        window.location.href = "menu.html"; // URL de la página deseada
+       
+        // Deshabilitar el botón después del tercer uso
+        document.getElementById("accessButton").disabled = true;
+      
+      } else {
+        alert(`Acceso concedido, te quedan ${3 - buttonClicks} usos`);
+      }*/
+    } else {
+      alert("Has excedido el límite de usos del botón.");
+      const accessSection = document.getElementById('accessSection'); 
+      accessSection.style.display = 'none';
+
+      const accessLimite = document.getElementById('accessLimite');
+      accessLimite.style.display = 'Block';
+    }
+  }
